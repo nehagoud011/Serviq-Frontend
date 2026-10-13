@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { API_BASE_URL } from "./services/apiConfig";
 import "./Register.css";
 
 function Register({ onLogin }) {
@@ -30,7 +31,7 @@ function Register({ onLogin }) {
 
     try {
       const response = await fetch(
-        "http://localhost:8080/api/users/register",
+        `${API_BASE_URL}/api/users/register`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

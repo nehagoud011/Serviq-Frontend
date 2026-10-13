@@ -1,5 +1,6 @@
+import { API_BASE_URL } from './apiConfig';
 
-const API_URL = 'http://localhost:8080/api/service-records';
+const API_URL = `${API_BASE_URL}/api/service-records`;
 
 export async function getAllServiceRecords() {
   const response = await fetch(API_URL);

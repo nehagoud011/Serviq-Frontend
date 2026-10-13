@@ -1,5 +1,5 @@
-
 import { useState } from "react";
+import { API_BASE_URL } from "./services/apiConfig";
 import "./Register.css";
 
 function Login({ onRegister, onLogin }) {
@@ -15,7 +15,7 @@ function Login({ onRegister, onLogin }) {
 
     try {
       const response = await fetch(
-        "http://localhost:8080/api/users/login",
+        `${API_BASE_URL}/api/users/login`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

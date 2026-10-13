@@ -1,10 +1,10 @@
-
 import { useEffect, useState } from 'react';
 import {
   getAllServiceRecords,
   addServiceRecord,
   deleteServiceRecord,
 } from './services/serviceRecordService';
+import { getAllAssets } from './services/assetService';
 
 function ServiceHistory() {
   const [records, setRecords] = useState([]);
@@ -34,9 +34,8 @@ function ServiceHistory() {
 
   async function loadAssets() {
     try {
-      const response = await fetch('http://localhost:8080/api/assets');
-      if (!response.ok) throw new Error('Failed to load assets');
-      setAssets(await response.json());
+      const data = await getAllAssets();
+      setAssets(data);
     } catch {
       setError('Could not load assets. Please check your backend.');
     }

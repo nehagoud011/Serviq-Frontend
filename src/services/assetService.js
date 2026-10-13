@@ -1,5 +1,6 @@
+import { API_BASE_URL } from './apiConfig';
 
-const API_URL = 'http://localhost:8080/api/assets';
+const API_URL = `${API_BASE_URL}/api/assets`;
 
 export async function getAllAssets() {
   const response = await fetch(API_URL);
